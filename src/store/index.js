@@ -1,4 +1,6 @@
-const { createStore } = require("vuex");
+import { createStore } from "vuex";
+
+
 export default createStore({
     //定义state，它是单一状态树————用一个对象就包含了全部的应用层级状态，主要作用是保存状态
     state:{
@@ -29,9 +31,13 @@ export default createStore({
           //发起异步请求
           //let res=await fetch('链接'+state.search);
           //let ret=await res.json();
-          let testValue=(Math.random()*10).toFixed(1);
-          
-          commit('setWeather',testValue)
+
+          let testfeelslike=(Math.random()*10).toFixed(1);
+          let testWeatherText='天晴';
+          let testwindclass=(Math.random()*5).toFixed(1);
+          let weatherInfo={text:testWeatherText,feels_like:testfeelslike,wind_class:testwindclass}
+          //提交mutations
+          commit('setWeather',weatherInfo)
        }
     }
 })

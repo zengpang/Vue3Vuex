@@ -1,29 +1,19 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
+
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+   <h1>天气预报</h1>
+   <Search></Search>
+   <Weather></Weather>
 </template>
+<script>
+import Search from './components/Search.vue';
+import Weather from './components/Weather.vue';
+export default{
+  components:{
+    Search,
+    Weather
+  }
+}
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+</script>
+
